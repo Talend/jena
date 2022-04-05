@@ -73,10 +73,6 @@ class XMLInputSAX extends SPARQLResult {
             XMLReader xr = XMLReaderFactory.createXMLReader() ;
             xr.setFeature("http://xml.org/sax/features/namespace-prefixes", true) ;
             xr.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
-            // This may not be strictly required as DTDs shouldn't be allowed at all, per previous line.
-            xr.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
-            xr.setFeature("http://xml.org/sax/features/external-general-entities", false);
-            xr.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
             // ResultSetXMLHandler1 handler = new ResultSetXMLHandler1() ;
             ResultSetXMLHandler2 handler = new ResultSetXMLHandler2() ;
             xr.setContentHandler(handler) ;

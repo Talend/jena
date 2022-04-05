@@ -102,7 +102,7 @@ class XMLInputStAX extends SPARQLResult {
 
     public XMLInputStAX(InputStream in, Model model) {
         try {
-            XMLStreamReader xReader = JenaXMLInput.newXMLStreamReader(in); ;
+            XMLStreamReader xReader = JenaXMLInput.newXMLStreamReader(in) ;
             worker(xReader, model) ;
         } catch (XMLStreamException e) {
             throw new ResultSetException("Can't initialize StAX parsing engine", e) ;
@@ -113,7 +113,7 @@ class XMLInputStAX extends SPARQLResult {
 
     public XMLInputStAX(Reader in, Model model) {
         try {
-            XMLStreamReader xReader = JenaXMLInput.newXMLStreamReader(in); ;
+            XMLStreamReader xReader = JenaXMLInput.newXMLStreamReader(in) ;
             worker(xReader, model) ;
         } catch (XMLStreamException e) {
             throw new ResultSetException("Can't initialize StAX parsing engine", e) ;
@@ -129,7 +129,7 @@ class XMLInputStAX extends SPARQLResult {
     public XMLInputStAX(String str, Model model) {
         try {
             Reader r = new StringReader(str) ;
-            XMLStreamReader xReader = JenaXMLInput.newXMLStreamReader(r); ;
+            XMLStreamReader xReader = JenaXMLInput.newXMLStreamReader(r) ;
             worker(xReader, model) ;
         } catch (XMLStreamException e) {
             throw new ResultSetException("Can't initialize StAX parsing engine", e) ;
