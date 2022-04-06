@@ -72,6 +72,7 @@ class XMLInputSAX extends SPARQLResult {
         try {
             XMLReader xr = XMLReaderFactory.createXMLReader() ;
             xr.setFeature("http://xml.org/sax/features/namespace-prefixes", true) ;
+            xr.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
             // ResultSetXMLHandler1 handler = new ResultSetXMLHandler1() ;
             ResultSetXMLHandler2 handler = new ResultSetXMLHandler2() ;
             xr.setContentHandler(handler) ;
