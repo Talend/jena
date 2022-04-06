@@ -40,6 +40,16 @@
         <enabled>false</enabled>
       </releases>
     </repository>
+    <repository>
+      <id>talend_nexus_deployment</id>
+      <url>${talend.nexus.url}/nexus/content/repositories/TalendOpenSourceRelease/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
   </repositories>
 
   <description>ARQ is a SPARQL 1.1 query engine for Apache Jena</description>
@@ -47,8 +57,32 @@
   <properties>
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
     <build.time.xsd>${maven.build.timestamp}</build.time.xsd>
+    <talend.nexus.url>https://artifacts-oss.talend.com</talend.nexus.url>
   </properties>
-
+  
+  <distributionManagement>
+      <snapshotRepository>
+          <id>talend_nexus_deployment</id>
+          <url>${talend.nexus.url}/nexus/content/repositories/TalendOpenSourceSnapshot/</url>
+          <snapshots>
+              <enabled>true</enabled>
+          </snapshots>
+          <releases>
+              <enabled>false</enabled>
+          </releases>
+      </snapshotRepository>
+      <repository>
+          <id>talend_nexus_deployment</id>
+          <url>${talend.nexus.url}/nexus/content/repositories/TalendOpenSourceRelease/</url>
+          <snapshots>
+              <enabled>false</enabled>
+          </snapshots>
+          <releases>
+              <enabled>true</enabled>
+          </releases>
+      </repository>
+  </distributionManagement>
+  
   <dependencies>
 
     <dependency>

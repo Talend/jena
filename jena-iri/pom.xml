@@ -35,6 +35,46 @@
     The IRI module provides an implementation of the IRI and URI specifications (RFC 3987 and 3986) which are used across Jena in order to comply with relevant W3C specifications for RDF and SPARQL which require conformance to these specifications.
   </description>
 
+  <properties>
+    <talend.nexus.url>https://artifacts-oss.talend.com</talend.nexus.url>
+  </properties>
+  
+  <repositories>
+    <repository>
+      <id>talend_nexus_deployment</id>
+      <url>${talend.nexus.url}/nexus/content/repositories/TalendOpenSourceRelease/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+  </repositories>
+  
+  <distributionManagement>
+      <snapshotRepository>
+          <id>talend_nexus_deployment</id>
+          <url>${talend.nexus.url}/nexus/content/repositories/TalendOpenSourceSnapshot/</url>
+          <snapshots>
+              <enabled>true</enabled>
+          </snapshots>
+          <releases>
+              <enabled>false</enabled>
+          </releases>
+      </snapshotRepository>
+      <repository>
+          <id>talend_nexus_deployment</id>
+          <url>${talend.nexus.url}/nexus/content/repositories/TalendOpenSourceRelease/</url>
+          <snapshots>
+              <enabled>false</enabled>
+          </snapshots>
+          <releases>
+              <enabled>true</enabled>
+          </releases>
+      </repository>
+  </distributionManagement>
+  
   <dependencies>
 
     <dependency>
